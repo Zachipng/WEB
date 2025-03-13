@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Luna National Highschool - Shaping Tomorrow's Leaders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global styles */
+        :root {
+            --primary-color: #E6E6FA;
+            --secondary-color: #87CEEB;
+            --accent-color: #4B0082;
+            --text-color: #333;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Enhanced Header styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .announcement-bar {
+            background: var(--accent-color);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.2em;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Enhanced Navigation */
+        nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin: 0 15px;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* New Feature Sections */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* New News Section */
+        .news-section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .news-item {
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            background: rgba(230,230,250,0.3);
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* New Faculty Section */
+        .faculty-section {
+            margin: 60px 0;
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .faculty-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .faculty-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        /* New Campus Life Gallery */
+        .gallery-section {
+            margin: 60px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Enhanced Footer */
+        footer {
+            background-color: var(--primary-color);
+            padding: 80px 0 40px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-newsletter {
+            grid-column: span 4;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .footer-newsletter input {
+            padding: 12px;
+            width: 300px;
+            border: 1px solid var(--accent-color);
+            border-radius: 25px;
+            margin-right: 10px;
+        }
+
+        .footer-newsletter button {
+            padding: 12px 24px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        /* New Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-slide-in {
+            animation: slideIn 0.6s ease forwards;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        /* Enhanced Media Queries */
+        @media (max-width: 1000px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .features-grid,
+            .faculty-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .features-grid,
+            .faculty-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-newsletter input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement-bar">
+        🎓 Now accepting applications for Summer 2025! Early Registration on February 15, 2025
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">General Luna National Highschool</div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#academics">Academics</a>
+                <a href="#admissions">Admissions</a>
+                <a href="#campus">Campus Life</a>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero-section animate-fade-in">
+            <h1>Welcome to General Luna National Highschool</h1>
+            <p>This is where we empower and push our student's mind to their limits for the best possible outcome for their Activities, Inspire them to be a better Student and teach them how to help our community, Build them to be a successful Leader.</p>
+            <button style="padding: 12px 24px; margin-top: 20px; background: var(--accent-color); color: white; border: none; border-radius: 25px; cursor: pointer;">
+                Enroll Now!
+            </button>
+        </section>
+
+        <section class="features-grid">
+            <div class="feature-card animate-slide-in">
+                <h3>Academic Excellence</h3>
+                <p>Rigorous curriculum designed to challenge and inspire</p>
+            </div>
+            <div class="feature-card animate-slide-in">
+                <h3>Innovation Hub</h3>
+                <p>ICT facilities for hands-on learning</p>
+            </div>
+            <div class="feature-card animate-slide-in">
+                <h3>Regional Perspective</h3>
+                <p>Journalist and athletes Programs</p>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <h2>Latest News</h2>
+            <div class="news-grid">
+                <div class="news-item">
+                    <h3>Earthquake Drill</h3>
+                    <p>General Luna National Highschool conducts National Simultaneous Earthquake Drill 2025</p>
+                    <small>March 13, 2025 8:15 AM</small>
+                </div>
+                <div class="news-item">
+                    <h3>Symposium</h3>
+                    <p>GLNHS conducts a symposium about Teen Age, Drug Addiction, HIV & Dengue, Rabies Awareness</p>
+                    <small>Posted on March 11, 2025 8:30 AM</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="faculty-section">
+            <h2>Our Distinguished Faculty</h2>
+            <div class="faculty-grid">
+                <div class="faculty-card">
+                    <img src="https://via.placeholder.com/120" alt="Faculty member">
+                    <h3>MA'AM Agnes</h3>
+                    <p>ADAS</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="https://via.placeholder.com/120" alt="Faculty member">
+                    <h3>SIR CHRIS</h3>
+                    <p>ADAS</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="https://via.placeholder.com/120" alt="Faculty member">
+                    <h3>MA'AM Sugar</h3>
+                    <p>ADAS</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="https://via.placeholder.com/120" alt="Faculty member">
+                    <h3>MA'AM Jolly</h3>
+                    <p>Technology Head</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2>Past events</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="c:\Users\Kyle Hanzen\Pictures\FB1.jpg" alt="Past Events">
+                </div>
+                <div class="gallery-item">
+                    <img src="c:\Users\Kyle Hanzen\Pictures\482137366_1190983646370369_4522694425213432736_2.jpg" alt="Past Events">
+                </div>
+                <div class="gallery-item">
+                    <img src="c:\Users\Kyle Hanzen\Pictures\481994183_1188213606647373_8561574447523117714_3.jpg" alt="Past Events">
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                    <img src="c:\Users\Kyle Hanzen\Pictures\481017014_1182135100588557_7822348114838016287_4.jpg" alt="Past Events">
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                    <img src="c:\Users\Kyle Hanzen\Pictures\480667582_1176752454460155_6138880643149730136_5.jpg" alt="Past Events">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Stay updated with the latest news and events</p>
+                <form>
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div>
+                <h3>Contact Us</h3>
+                <p>General Luna National Highschool<br>Llanera, Nueva Ecija<br>Phone: (995) 137-4627<br>Email: GeneralLuna@gmail.edu</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <p>Student Portal<br>Parent Portal<br>Career Opportunities<br>Library Resources</p>
+            </div>
+            <div>
+                <h3>Programs</h3>
+                <p>GAS Education<br>TVL Education<br>HUMMS Education<br>ICT Program</p>
+            </div>
+            <div>
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
